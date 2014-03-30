@@ -106,7 +106,9 @@ return array(
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
-
+		/*ADMIN*/
+		'Cartalyst\Sentry\SentryServiceProvider',
+		'Mrjuliuss\Syntara\SyntaraServiceProvider',
 	),
 
 	/*
@@ -172,7 +174,8 @@ return array(
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
-
+		/*ADMIN*/
+		'Sentry'          => 'Cartalyst\Sentry\Facades\Laravel\Sentry'
 	),
 
 );
