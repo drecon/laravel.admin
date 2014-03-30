@@ -42,7 +42,7 @@ class ConfigAdmin extends Command {
 		$this->info('Config Adm. System!');
 		$this->info('...................................');
 
-		if ($this->confirm('Do you remove comments in (providers and aliases) app/config/app.php? [yes|no]'),false)
+		if ($this->confirm('Do you remove comments in (providers and aliases) app/config/app.php? [yes|no]',false))
 		{
 			$this->info('Aborted config.');	
 			
@@ -50,14 +50,14 @@ class ConfigAdmin extends Command {
 		}
 		exec ( "composer update" );
 		
-		if ($this->confirm('Do you configurate app/config/database.php? [yes|no]'),false)
+		if ($this->confirm('Do you configurate app/config/database.php? [yes|no]',false))
 		{
 			$this->info('Aborted config.');	
 			
 			return;
 		}
 
-		if ($this->confirm('Do you import yout database? [yes|no]'),false)
+		if ($this->confirm('Do you import yout database? [yes|no]',false))
 		{
 			$this->info('Aborted config.');	
 			
