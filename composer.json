@@ -5,13 +5,19 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.1.*",
-		"mrjuliuss/syntara":"1.2.*"
+		"mrjuliuss/syntara":"1.2.*",
+		"raahul/larryfour": "1.*"
 	},
 	"repositories": [
 		{
 			"url": "https://github.com/drecon/syntara.git",
 			"type": "git"
-		}	
+		},
+		{
+			"url": "https://github.com/drecon/larry-four-generator.git",
+			"type": "git"
+		}
+		
 	],	
 	"autoload": {
 		"classmap": [

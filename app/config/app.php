@@ -107,8 +107,10 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		/*ADMIN*/
-		'Cartalyst\Sentry\SentryServiceProvider',
-		'Mrjuliuss\Syntara\SyntaraServiceProvider',
+		//'Cartalyst\Sentry\SentryServiceProvider', // descomente aqui! 
+		//'Mrjuliuss\Syntara\SyntaraServiceProvider', // descomente aqui! 
+		/*GENERATE MODALS BY DATABASE */
+		//'Raahul\LarryFour\LarryFourServiceProvider', // descomente aqui! 
 	),
 
 	/*
@@ -175,7 +177,7 @@ return array(
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
 		/*ADMIN*/
-		'Sentry'          => 'Cartalyst\Sentry\Facades\Laravel\Sentry'
+		//'Sentry'          => 'Cartalyst\Sentry\Facades\Laravel\Sentry' // descomente aqui! 
 	),
 
 );

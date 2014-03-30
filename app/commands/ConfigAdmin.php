@@ -41,28 +41,45 @@ class ConfigAdmin extends Command {
 		//App::register('Mrjuliuss\Syntara\SyntaraServiceProvider');
 		$this->info('Config Adm. System!');
 		$this->info('...................................');
-		
-		if ($this->confirm('Do you configurate your database? [yes|no]'))
+
+		if ($this->confirm('Do you remove comments in (providers and aliases) app/config/app.php? [yes|no]'),false)
 		{
-		
-			$this->info('Creating user account...');
-
-			$name = $this->ask('What is admin name?');
-
-			$email = $this->ask('What is admin e-email?');
-
-			$password = $this->secret('What is the admin password?');		
-			
-			exec ( "php artisan syntara:install" );
-			exec ( "php artisan create:user {$name} {$email} {$password} admin" );
-						
-			$this->info('Created!');		
-			
-		}else{
-		
 			$this->info('Aborted config.');	
 			
+			return;
 		}
+		exec ( "composer update" );
+		
+		if ($this->confirm('Do you configurate app/config/database.php? [yes|no]'),false)
+		{
+			$this->info('Aborted config.');	
+			
+			return;
+		}
+
+		if ($this->confirm('Do you import yout database? [yes|no]'),false)
+		{
+			$this->info('Aborted config.');	
+			
+			return;
+		}
+		
+		$this->info('Creating user account...');
+
+		$name = $this->ask('What is admin name?');
+
+		$email = $this->ask('What is admin e-email?');
+
+		$password = $this->secret('What is the admin password?');		
+		
+		//criar tabela de usuários
+		exec ( "php artisan syntara:install" );
+		exec ( "php artisan create:user {$name} {$email} {$password} admin" );
+
+		//criar modais em cima do banco de dados
+		exec ( "php artisan larry:fromdb --except=users" );
+		
+		$this->info('Created!');								
 
 	}
 
